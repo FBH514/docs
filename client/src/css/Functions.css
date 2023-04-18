@@ -1,0 +1,38 @@
+.functions {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: 1fr;
+  grid-gap: 2rem;
+  margin: 1rem 0;
+}
+
+.function {
+  background: rgba(var(--white), 0.05);
+  border: 1px solid rgba(var(--white), 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+}
+
+.function-header {
+  padding: 0.5rem;
+}
+.function-header .function-header-pre {
+  color: rgba(var(--white));
+  font-weight: 300;
+  font-family: "Roboto Mono for Powerline", monospace;
+  background: rgba(var(--white), 0.05);
+  padding: 0.1rem;
+  border-radius: 5px;
+}
+.function-header .function-header-h6 {
+  font-size: 1.2rem;
+}
+
+.function-body {
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+/*# sourceMappingURL=Functions.css.map */

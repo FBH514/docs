@@ -1,0 +1,9 @@
+#stack {
+  height: auto;
+  padding: 2rem;
+  overflow-y: scroll;
+  display: flex;
+  flex-direction: column;
+}
+
+/*# sourceMappingURL=Stack.css.map */

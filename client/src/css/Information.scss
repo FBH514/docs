@@ -1,0 +1,63 @@
+.information {
+  margin: 1rem 0;
+  background: rgba(var(--white), 0.05);
+  border: 1px solid rgba(var(--white), 0.1);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.information-header {
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(var(--white));
+  background: rgba(var(--white), 0.05);
+  border-radius: 5px;
+  font-family: "Roboto Mono", monospace;
+  font-weight: 300;
+  font-size: 2rem;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.information-body {
+  padding: 0.5rem;
+
+  p{
+    margin: 0.5rem 0;
+    font-size: 1.2rem;
+  }
+}
+
+.information-button {
+
+  display: flex;
+  align-items: center;
+
+  button {
+    outline: none;
+    background: rgba(var(--blue));
+    color: rgba(var(--white));
+    font-size: 1.2rem;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border: 1px solid rgba(var(--blue));
+  }
+
+  button:hover {
+    background: rgba(var(--black));
+    color: rgba(var(--blue));
+  }
+
+  button:disabled {
+    background: rgba(var(--blue), 0.5);
+    color: rgba(var(--white), 0.5);
+    cursor: not-allowed;
+  }
+}
+

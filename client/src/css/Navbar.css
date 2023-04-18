@@ -1,0 +1,36 @@
+#navbar {
+  padding: 0.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-weight: 800;
+  height: auto;
+}
+
+#title a {
+  font-size: 3rem;
+  text-decoration: none;
+  color: rgba(var(--blue));
+}
+#title a:hover {
+  color: rgba(var(--white));
+}
+
+#navbar-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+#navbar-items .navbar-item a, #navbar-items .navbar-item-active a {
+  text-decoration: none;
+  color: rgba(var(--white), 0.1);
+}
+#navbar-items .navbar-item a:hover, #navbar-items .navbar-item-active a:hover {
+  color: rgba(var(--white));
+}
+#navbar-items .navbar-item-active a {
+  text-decoration: none;
+  color: rgba(var(--blue));
+}
+
+/*# sourceMappingURL=Navbar.css.map */

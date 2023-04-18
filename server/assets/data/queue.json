@@ -1,0 +1,112 @@
+[
+  {
+    "title": "__init__",
+    "params": [
+      "lorem"
+    ],
+    "returns": "void",
+    "description": [
+      "lorem ipsum"
+    ]
+  },
+  {
+    "title": "__str__",
+    "params": [
+      "lorem"
+    ],
+    "returns": "void",
+    "description": [
+      "lorem ipsum"
+    ]
+  },
+  {
+    "title": "__repr__",
+    "params": [
+      "lorem"
+    ],
+    "returns": "void",
+    "description": [
+      "lorem ipsum"
+    ]
+  },
+  {
+    "title": "limit",
+    "params": [
+      "lorem"
+    ],
+    "returns": "int",
+    "description": [
+      "lorem ipsum"
+    ]
+  },
+  {
+    "title": "limit",
+    "params": [
+      "lorem"
+    ],
+    "returns": "void",
+    "description": [
+      "lorem ipsum"
+    ]
+  },
+  {
+    "title": "enqueue",
+    "params": [
+      "lorem"
+    ],
+    "returns": "void",
+    "description": [
+      "lorem ipsum"
+    ]
+  },
+  {
+    "title": "dequeue",
+    "params": [
+      "lorem"
+    ],
+    "returns": "Any",
+    "description": [
+      "lorem ipsum"
+    ]
+  },
+  {
+    "title": "peek",
+    "params": [
+      "lorem"
+    ],
+    "returns": "Any",
+    "description": [
+      "lorem ipsum"
+    ]
+  },
+  {
+    "title": "contains",
+    "params": [
+      "lorem"
+    ],
+    "returns": "bool",
+    "description": [
+      "lorem ipsum"
+    ]
+  },
+  {
+    "title": "is_empty",
+    "params": [
+      "lorem"
+    ],
+    "returns": "bool",
+    "description": [
+      "lorem ipsum"
+    ]
+  },
+  {
+    "title": "size",
+    "params": [
+      "lorem"
+    ],
+    "returns": "int",
+    "description": [
+      "lorem ipsum"
+    ]
+  }
+]

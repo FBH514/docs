@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+:root {
+  --blue: 45, 114, 143;
+  --purple: 30, 21, 42;
+  --white: 249, 245, 255;
+  --black: 33, 33, 33;
+}
+
+body {
+  background: #2D728F;
+}
+
+.App {
+  background: rgba(var(--black));
+  color: rgb(var(--blue));
+  font-family: "Oxygen", sans-serif;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  position: relative;
+  z-index: 1;
+  height: 100vh;
+  max-height: 100vh;
+  display: grid;
+  grid-template-rows: fit-content(100%) 1fr;
+}
+
+/*# sourceMappingURL=App.css.map */
