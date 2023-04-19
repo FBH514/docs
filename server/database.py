@@ -123,7 +123,6 @@ class Database:
         self.guard(query)
         with self._conn:
             self._cur.execute(query)
-        self.commit()
 
     def insert_data(self, query: str, data: tuple) -> None:
         """
@@ -135,7 +134,6 @@ class Database:
         self.guard(query)
         with self._conn:
             self._cur.execute(query, data)
-        self.commit()
 
     def select_data(self, query: str) -> list[tuple]:
         """
@@ -158,7 +156,6 @@ class Database:
         self.guard(query)
         with self._conn:
             self._cur.execute(query, data)
-        self.commit()
 
     def delete_data(self, query: str, data: tuple) -> None:
         """
@@ -170,4 +167,3 @@ class Database:
         self.guard(query)
         with self._conn:
             self._cur.execute(query, data)
-        self.commit()
