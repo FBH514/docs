@@ -1,7 +1,7 @@
 import os
 from dotenv import load_dotenv
 import psycopg2 as postgres
-from psycopg2 import connection
+# from psycopg2 import connection
 
 
 class Database:
@@ -14,8 +14,8 @@ class Database:
         Constructor for the Database class.
         """
         load_dotenv()
-        self._conn: connection = self.connection()
-        self._cur: postgres.cursor = self._conn.cursor()
+        self._conn = self.connection()
+        self._cur = self._conn.cursor()
         self._resources = {"cur": self._cur, "conn": self._conn}
 
     def __str__(self) -> str:
@@ -23,7 +23,9 @@ class Database:
         Returns a string representation of the Database class to display.
         :return: str
         """
-        pass
+        print(type(self._conn))
+        print(type(self._cur))
+        return "kek"
 
     def __repr__(self) -> str:
         """
@@ -64,7 +66,7 @@ class Database:
         return cls._instance
 
     @staticmethod
-    def connection() -> connection:
+    def connection() -> postgres.extensions.connection:
         """
         Creates a connection to the database.
         :return: None
@@ -82,7 +84,7 @@ class Database:
             port=port,
         )
 
-    def cursor(self) -> postgres.cursor:
+    def cursor(self) -> postgres.extensions.cursor:
         """
         Creates a cursor to the database.
         :return: None
@@ -96,7 +98,7 @@ class Database:
         """
         self._conn.commit()
 
-    def close(self, resource: str) -> None:
+    def close(self, resource: str = "conn") -> None:
         """
         Closes the specified resource of the database.
         :param resource: str

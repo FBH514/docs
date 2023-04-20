@@ -1,3 +1,4 @@
+import functools
 import json
 
 from fastapi import FastAPI
@@ -6,6 +7,7 @@ from fastapi.responses import Response
 
 
 days = 30
+days_in_minutes = 60 * 24 * days
 max_age = days * (24 * (60 ** 2))
 project = "dsa"
 version = "v1"
@@ -20,15 +22,29 @@ app.add_middleware(
     allow_credentials=True,
 )
 
-def set_headers(response: Response) -> None:
+def cache(minutes: int = 60) -> callable:
     """
-    Sets response headers.
-    :param response: Response
-    :return: None
+    Caches responses.
+    :param minutes: int, default=60
+    :return: callable
     """
-    response.headers['Cache-Control'] = f"public, max-age={max_age}"
+    def decorator(function: callable) -> callable:
+        @functools.wraps(function)
+        def wrapper(*args, **kwargs) -> callable:
+            """
+            Decorator wrapper.
+            :param args: list
+            :param kwargs: dict
+            :return: function
+            """
+            response = args[0]
+            response.headers['Cache-Control'] = f"public, max-age={minutes * 60}"
+            return function(*args, **kwargs)
+        return wrapper
+    return decorator
 
 
+@cache(days_in_minutes)
 @app.get("/")
 def root(response: Response) -> list:
     """
@@ -36,7 +52,6 @@ def root(response: Response) -> list:
     :param response: Response
     :return: str
     """
-    set_headers(response)
     data = [
         f"Stack: /{version}/{project}/stack",
         f"Queue: /{version}/{project}/queue",
@@ -46,6 +61,7 @@ def root(response: Response) -> list:
 
 
 # GET /v1/dsa/stack
+@cache(days_in_minutes)
 @app.get(f"/{version}/{project}/stack")
 def get_stack(response: Response) -> list[dict]:
     """
@@ -53,12 +69,12 @@ def get_stack(response: Response) -> list[dict]:
     :param response: Response
     :return: list[dict]
     """
-    set_headers(response)
     with open(f"{DATA_DIRECTORY}/stack.json", "r") as file:
         return json.load(file)
 
 
 # GET /v1/dsa/queue
+@cache(days_in_minutes)
 @app.get(f"/{version}/{project}/queue")
 def get_queue(response: Response) -> list[dict]:
     """
@@ -66,12 +82,12 @@ def get_queue(response: Response) -> list[dict]:
     :param response: Response
     :return: list[dict]
     """
-    set_headers(response)
     with open(f"{DATA_DIRECTORY}/queue.json", "r") as file:
         return json.load(file)
 
 
 # GET /v1/dsa/linkedlist
+@cache(days_in_minutes)
 @app.get(f"/{version}/{project}/linkedlist")
 def get_queue(response: Response) -> list[dict]:
     """
@@ -79,6 +95,5 @@ def get_queue(response: Response) -> list[dict]:
     :param response: Response
     :return: list[dict]
     """
-    set_headers(response)
     with open(f"{DATA_DIRECTORY}/linkedlist.json", "r") as file:
         return json.load(file)

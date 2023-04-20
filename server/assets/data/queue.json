@@ -2,111 +2,117 @@
   {
     "title": "__init__",
     "params": [
-      "lorem"
+      {
+        "param": "limit",
+        "type": "int"
+      }
     ],
     "returns": "void",
-    "description": [
-      "lorem ipsum"
-    ]
+    "overview": "Constructor for the Queue data structure.",
+    "description": []
   },
   {
     "title": "__str__",
-    "params": [
-      "lorem"
-    ],
-    "returns": "void",
-    "description": [
-      "lorem ipsum"
-    ]
+    "params": [],
+    "returns": "str",
+    "overview": "Returns a string representation of the object to display.",
+    "description": []
   },
   {
     "title": "__repr__",
-    "params": [
-      "lorem"
-    ],
-    "returns": "void",
-    "description": [
-      "lorem ipsum"
-    ]
+    "params": [],
+    "returns": "str",
+    "overview": "Returns a string representation of the object to debug.",
+    "description": []
   },
   {
     "title": "limit",
-    "params": [
-      "lorem"
-    ],
+    "params": [],
     "returns": "int",
+    "overview": "Returns Queue's Node object limit.",
     "description": [
-      "lorem ipsum"
+      "@property"
     ]
   },
   {
     "title": "limit",
     "params": [
-      "lorem"
+      {
+        "param": "value",
+        "type": "int"
+      }
     ],
     "returns": "void",
+    "overview": "Sets the Queue's Node object limit.",
     "description": [
-      "lorem ipsum"
+      "@limit.setter"
     ]
   },
   {
     "title": "enqueue",
     "params": [
-      "lorem"
+      {
+        "param": "data",
+        "value":"any"
+      }
     ],
     "returns": "void",
+    "overview": "Inserts new data in the Queue.",
     "description": [
-      "lorem ipsum"
+      "Throws ValueError if data is None.",
+      "Throws IndexError if Queue is full."
     ]
   },
   {
     "title": "dequeue",
-    "params": [
-      "lorem"
-    ],
+    "params": [],
     "returns": "Any",
+    "overview": "Removes and returns the first item in the Queue.",
     "description": [
-      "lorem ipsum"
+      "Throws IndexError if Queue is empty."
     ]
   },
   {
     "title": "peek",
-    "params": [
-      "lorem"
-    ],
+    "params": [],
     "returns": "Any",
+    "overview": "Returns the first item in the Queue without removing it.",
     "description": [
-      "lorem ipsum"
+      "Throws IndexError if Queue is empty."
     ]
   },
   {
     "title": "contains",
     "params": [
-      "lorem"
+      {
+        "param": "data",
+        "type": "Any"
+      }
     ],
     "returns": "bool",
+    "overview": "Returns whether the data is in the Queue.",
     "description": [
-      "lorem ipsum"
+      "Returns True if item is in the Queue.",
+      "Returns False if item is not in the Queue.",
+      "Throws ValueError if data is None.",
+      "Throws IndexError if Queue is empty."
     ]
   },
   {
     "title": "is_empty",
-    "params": [
-      "lorem"
-    ],
+    "params": [],
     "returns": "bool",
+    "overview": "Returns whether the Queue is empty.",
     "description": [
-      "lorem ipsum"
+      "Returns True if Queue is empty.",
+      "Returns False if Queue is not empty."
     ]
   },
   {
     "title": "size",
-    "params": [
-      "lorem"
-    ],
+    "params": [],
     "returns": "int",
-    "description": [
-      "lorem ipsum"
-    ]
+    "overview": "Returns the Queue's size.",
+    "description": []
   }
 ]
