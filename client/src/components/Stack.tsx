@@ -16,7 +16,7 @@ function Stack(): JSX.Element {
     const {data} = useQuery('stack', getFunctions);
 
     const info: InformationProps = {
-        title: "Stacks",
+        title: "What is a Stack?",
         description: [
             "In computer science, a stack is an abstract data type that represents a collection of elements, where the addition or removal of elements follows a last-in-first-out (LIFO) principle.",
             "Stacks are commonly used in programming languages and computer systems for managing memory, handling function calls, parsing expressions, and other applications where the last-in-first-out order of elements is useful."

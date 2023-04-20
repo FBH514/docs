@@ -3,10 +3,21 @@ import {useState} from "react";
 
 export interface FunctionProps {
     title: string | null;
-    params: string[] | null;
+    params: ParamsProps[] | undefined;
     returns: string | null;
     overview: string;
-    description: string[] | null;
+    description: string[] | undefined;
+}
+
+interface ParamsProps {
+    param: string;
+    type: string;
+    optional: boolean;
+}
+
+interface DropdownProps {
+    params: ParamsProps[] | undefined;
+    description: string[] | undefined;
 }
 
 function Functions(props: { arr: FunctionProps[] | undefined }): JSX.Element {
@@ -53,12 +64,39 @@ function Functions(props: { arr: FunctionProps[] | undefined }): JSX.Element {
         );
     }
 
-    function Dropdown(props: { arr: string[] | null }): JSX.Element {
+    function Dropdown(props: { data: DropdownProps | undefined }): JSX.Element {
+
+        function Params(props: { params: ParamsProps[] | undefined}): JSX.Element {
+            return(
+                <div className={"dropdown-params"}>
+                    {props.params && props.params?.map((item, index) => (
+                        <>
+                            <h3>Params</h3>
+                            <div className={"dropdown-params-item"} key={index}>
+                                <p className={"param-item"}>name: {item.param}</p>
+                                <p className={"param-item-type"}>type: {item.type}</p>
+                                <p className={"param-item-optional"}>optional: {item.optional ? "True" : "False"}</p>
+                            </div>
+                        </>
+                    ))}
+                </div>
+            );
+        }
+
+        function Description(props: { description: string[] | undefined}): JSX.Element {
+            return (
+                <div className={"dropdown-description"}>
+                    {props.description && props.description.map((item, index) => (
+                        <p key={index}>{item}</p>
+                    ))}
+                </div>
+            );
+        }
+
         return (
             <div className={"dropdown"}>
-                {props?.arr && props.arr.map((item, index) => (
-                    <p key={index}>{item}</p>
-                ))}
+                <Params params={props.data?.params && props.data?.params}/>
+                <Description description={props.data?.description && props.data?.description}/>
             </div>
         );
     }
@@ -70,9 +108,11 @@ function Functions(props: { arr: FunctionProps[] | undefined }): JSX.Element {
                     <div className={"function"} key={index}>
                         <Header title={item.title ?? "Loading"} returns={item.returns ?? ""}/>
                         <Body overview={item.overview && item.overview}/>
-                        <DropdownButton child={index}/>
+                        {item.description!.length > 0 || item.params!.length !== 0 ?
+                            <DropdownButton child={index}/> : null}
                     </div>
-                    <Dropdown arr={item.description && item.description}/>
+                    <Dropdown data={{params: item?.params, description: item?.description}
+                    }/>
                 </div>
             ))}
         </div>

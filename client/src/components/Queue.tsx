@@ -17,7 +17,7 @@ function Queue(): JSX.Element {
     const {data} = useQuery('queue', getFunctions);
 
     const info: InformationProps = {
-        title: "Queue",
+        title: "What is a Queue?",
         description: [
             "In computer science, a queue is an abstract data type that represents a collection of elements, where the addition of elements happens at one end (rear) and the removal of elements happens at the other end (front).",
             "Queues are commonly used in programming languages and computer systems for managing resources, scheduling tasks, and handling data packets in networking applications. They are also used in real-world scenarios such as waiting in line for a ticket or boarding a plane."

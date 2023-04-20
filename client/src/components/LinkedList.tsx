@@ -17,7 +17,7 @@ function LinkedList(): JSX.Element {
     const {data} = useQuery('linkedlist', getFunctions);
 
     const info: InformationProps = {
-        title: "Linked List",
+        title: "What is a Linked List?",
         description: [
             "In computer science, a linked list is a linear data structure used to store a collection of elements. A linked list consists of nodes, where each node contains a data element and a reference (pointer) to the next node in the sequence. The first node is called the head, and the last node is called the tail.",
             "Linked lists are used to implement various abstract data types such as stacks, queues, and associative arrays. They are particularly useful in situations where the size of the data set is not known in advance, or when fast insertions and deletions are required."

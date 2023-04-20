@@ -1,9 +1,24 @@
 .titles {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr fit-content(100%) 1fr;
   align-items: center;
-  gap: 0.5rem;
-  font-size: 2rem;
-  font-weight: 400;
+  gap: 2rem;
+  font-size: 3rem;
+  font-weight: 700;
+  color: rgba(var(--white), 0.3);
+  margin-top: 5rem;
+}
+.titles .title-h3 {
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #e8b923;
+  color: rgba(var(--white), 0.5);
+}
+.titles .title-hr {
+  width: 100%;
+  border: none;
+  height: 1px;
+  background: rgba(var(--white), 0.5);
 }
 
 /*# sourceMappingURL=Title.css.map */
