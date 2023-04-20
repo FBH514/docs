@@ -2,111 +2,123 @@
   {
     "title": "__init__",
     "params": [
-      "lorem"
+      {
+        "param": "limit",
+        "type": "int",
+        "optional": true
+      }
     ],
-    "returns": "void",
-    "description": [
-      "lorem ipsum"
-    ]
+    "returns": "None",
+    "overview": "Constructor for the Stack data structure.",
+    "description": []
   },
   {
     "title": "__str__",
-    "params": [
-      "lorem"
-    ],
-    "returns": "void",
-    "description": [
-      "lorem ipsum"
-    ]
+    "params": [],
+    "returns": "str",
+    "overview": "Returns a string representation of the Stack to display.",
+    "description": []
   },
   {
     "title": "__repr__",
-    "params": [
-      "lorem"
-    ],
-    "returns": "void",
-    "description": [
-      "lorem ipsum"
-    ]
+    "params": [],
+    "returns": "str",
+    "overview": "Returns a string representation of the Stack to debug.",
+    "description": []
   },
   {
     "title": "limit",
-    "params": [
-      "lorem"
-    ],
+    "params": [],
     "returns": "int",
+    "overview": "Returns Stack's Node object limit.",
     "description": [
-      "lorem ipsum"
+      "@property"
     ]
   },
   {
     "title": "limit",
     "params": [
-      "lorem"
+      {
+        "param": "value",
+        "type": "int",
+        "optional": false
+      }
     ],
-    "returns": "void",
+    "returns": "None",
+    "overview": "Sets the Stack's Node object limit.",
     "description": [
-      "lorem ipsum"
+      "@limit.setter",
+      "Raises ValueError if value not > 0.",
+      "Raises ValueError if value is smaller than the Linked List's size."
     ]
   },
   {
     "title": "push",
     "params": [
-      "lorem"
+      {
+        "param": "data",
+        "value":"Any",
+        "optional": false
+      }
     ],
-    "returns": "void",
+    "returns": "None",
+    "overview": "Inserts new data in the Stack.",
     "description": [
-      "lorem ipsum"
+      "Raises ValueError if data is None.",
+      "Raises IndexError if Stack is full."
     ]
   },
   {
     "title": "pop",
-    "params": [
-      "lorem"
-    ],
+    "params": [],
     "returns": "Any",
+    "overview": "Removes and returns the first item in the Stack.",
     "description": [
-      "lorem ipsum"
+      "Raises IndexError if Stack is empty."
     ]
   },
   {
     "title": "peek",
-    "params": [
-      "lorem"
-    ],
+    "params": [],
     "returns": "Any",
+    "overview": "Returns the first item in the Stack without removing it.",
     "description": [
-      "lorem ipsum"
+      "Raises IndexError if Stack is empty."
     ]
   },
   {
     "title": "contains",
     "params": [
-      "lorem"
+      {
+        "param": "data",
+        "type": "Any",
+        "optional": false
+      }
     ],
     "returns": "bool",
+    "overview": "Returns whether the data is in the Stack.",
     "description": [
-      "lorem ipsum"
+      "Raises ValueError if data is None.",
+      "Raises IndexError if Stack is empty.",
+      "Returns True if item is in the Stack.",
+      "Returns False if item is not in the Stack."
     ]
   },
   {
     "title": "is_empty",
-    "params": [
-      "lorem"
-    ],
+    "params": [],
     "returns": "bool",
+    "overview": "Returns whether the Stack is empty.",
     "description": [
-      "lorem ipsum"
+      "Returns True if Stack is empty.",
+      "Returns False if Stack is not empty."
     ]
   },
   {
     "title": "size",
-    "params": [
-      "lorem"
-    ],
+    "params": [],
     "returns": "int",
-    "description": [
-      "lorem ipsum"
-    ]
+    "overview": "Returns the Stack's size.",
+    "description": []
   }
 ]

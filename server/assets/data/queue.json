@@ -4,10 +4,11 @@
     "params": [
       {
         "param": "limit",
-        "type": "int"
+        "type": "int",
+        "optional": true
       }
     ],
-    "returns": "void",
+    "returns": "None",
     "overview": "Constructor for the Queue data structure.",
     "description": []
   },
@@ -15,14 +16,14 @@
     "title": "__str__",
     "params": [],
     "returns": "str",
-    "overview": "Returns a string representation of the object to display.",
+    "overview": "Returns a string representation of the Queue to display.",
     "description": []
   },
   {
     "title": "__repr__",
     "params": [],
     "returns": "str",
-    "overview": "Returns a string representation of the object to debug.",
+    "overview": "Returns a string representation of the Queue to debug.",
     "description": []
   },
   {
@@ -39,13 +40,16 @@
     "params": [
       {
         "param": "value",
-        "type": "int"
+        "type": "int",
+        "optional": false
       }
     ],
-    "returns": "void",
+    "returns": "None",
     "overview": "Sets the Queue's Node object limit.",
     "description": [
-      "@limit.setter"
+      "@limit.setter",
+      "Raises ValueError if value not > 0.",
+      "Raises ValueError if value is smaller than the Linked List's size."
     ]
   },
   {
@@ -53,14 +57,15 @@
     "params": [
       {
         "param": "data",
-        "value":"any"
+        "value":"Any",
+        "optional": false
       }
     ],
-    "returns": "void",
+    "returns": "None",
     "overview": "Inserts new data in the Queue.",
     "description": [
-      "Throws ValueError if data is None.",
-      "Throws IndexError if Queue is full."
+      "Raises ValueError if data is None.",
+      "Raises IndexError if Queue is full."
     ]
   },
   {
@@ -69,7 +74,7 @@
     "returns": "Any",
     "overview": "Removes and returns the first item in the Queue.",
     "description": [
-      "Throws IndexError if Queue is empty."
+      "Raises IndexError if Queue is empty."
     ]
   },
   {
@@ -78,7 +83,7 @@
     "returns": "Any",
     "overview": "Returns the first item in the Queue without removing it.",
     "description": [
-      "Throws IndexError if Queue is empty."
+      "Raises IndexError if Queue is empty."
     ]
   },
   {
@@ -86,16 +91,17 @@
     "params": [
       {
         "param": "data",
-        "type": "Any"
+        "type": "Any",
+        "optional": false
       }
     ],
     "returns": "bool",
     "overview": "Returns whether the data is in the Queue.",
     "description": [
+      "Raises ValueError if data is None.",
+      "Raises IndexError if Queue is empty.",
       "Returns True if item is in the Queue.",
-      "Returns False if item is not in the Queue.",
-      "Throws ValueError if data is None.",
-      "Throws IndexError if Queue is empty."
+      "Returns False if item is not in the Queue."
     ]
   },
   {
