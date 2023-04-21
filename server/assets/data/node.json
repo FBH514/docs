@@ -1,0 +1,82 @@
+[
+  {
+    "title": "__init__",
+    "params": [
+      {
+        "param": "data",
+        "type": "Any",
+        "optional": false
+      },
+      {
+        "param": "_next",
+        "type": "Node",
+        "optional": true
+      }
+    ],
+    "returns": "None",
+    "overview": "Constructor for the Node data structure.",
+    "description": [ ]
+  },
+  {
+    "title": "__str__",
+    "params": [ ],
+    "returns": "str",
+    "overview": "Returns a string representation of the Node to display.",
+    "description": [ ]
+  },
+  {
+    "title": "__repr__",
+    "params": [ ],
+    "returns": "str",
+    "overview": "Returns a string representation of the Node to debug.",
+    "description": [ ]
+  },
+  {
+    "title": "data",
+    "params": [ ],
+    "returns": "Any",
+    "overview": "Return the Node's data.",
+    "description": [
+      "@property"
+    ]
+  },
+  {
+    "title": "data",
+    "params": [
+      {
+        "param": "value",
+        "type": "Any",
+        "optional": false
+      }
+    ],
+    "returns": "None",
+    "overview": "Return the Node's data.",
+    "description": [
+      "@data.setter"
+    ]
+  },
+  {
+    "title": "next",
+    "params": [ ],
+    "returns": "Node",
+    "overview": "Return the Node's next Node object.",
+    "description": [
+      "@property"
+    ]
+  },
+  {
+    "title": "next",
+    "params": [
+      {
+        "param": "value",
+        "type": "Any",
+        "optional": false
+      }
+    ],
+    "returns": "None",
+    "overview": "Return the Node's next Node object.",
+    "description": [
+      "@next.setter"
+    ]
+  }
+]

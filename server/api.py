@@ -56,6 +56,7 @@ def root(response: Response) -> list:
     :return: str
     """
     data = [
+        f"Node: /{version}/{project}/node",
         f"Stack: /{version}/{project}/stack",
         f"Queue: /{version}/{project}/queue",
         f"Linked List: /{version}/{project}/linkedlist",
@@ -63,7 +64,7 @@ def root(response: Response) -> list:
     return data
 
 
-def conversion(data: list[tuple]) -> list[dict]:
+def function_props_conversion(data: list[tuple]) -> list[dict]:
     """
     Converts fetched item from database to Python formats.
     :param data: list[tuple]
@@ -77,72 +78,45 @@ def conversion(data: list[tuple]) -> list[dict]:
              'description': ast.literal_eval(item[5])} for item in data]
 
 
-# GET /v1/dsa/stack
 @cache(days_in_minutes)
-@app.get(f"/{version}/{project}/stack")
-def get_stack(response: Response) -> list[dict]:
+@app.get("/v1/dsa/{target}/functions")
+def get_functions(response: Response, target: str) -> list[dict]:
     """
-    Returns the Stack data.
+    Returns the target's functions.
     :param response: Response
+    :param target: str
     :return: list[dict]
     """
+    if target.casefold() not in ["node", "stack", "queue", "linkedlist"]:
+        return []
     with Database() as db:
-        stack = db.select_data(
-            os.getenv("STACK")
+        functions = db.select_data(
+            os.getenv("{}_FUNCTIONS".format(target.upper()))
         )
-    return conversion(stack)
+    return function_props_conversion(functions)
 
 
-# GET /v1/dsa/queue
+def info_props_conversion(data: list[tuple]) -> list[dict]:
+    return [
+        {"title": item[2], "description": ast.literal_eval(item[3])}
+        for item in data
+    ]
+
+# GET /v1/dsa/{target}/info
 @cache(days_in_minutes)
-@app.get(f"/{version}/{project}/queue")
-def get_queue(response: Response) -> list[dict]:
+@app.get("/v1/dsa/{target}/info")
+def get_info(response: Response, target: str) -> list[dict]:
     """
-    Returns the queue data.
+    Returns the target's info.
     :param response: Response
+    :param target: str
     :return: list[dict]
     """
+    if target.casefold() not in ["home", "node", "stack", "queue", "linkedlist"]:
+        return []
     with Database() as db:
-        queue = db.select_data(
-            os.getenv("QUEUE")
-        )
-    return conversion(queue)
-
-
-# GET /v1/dsa/linkedlist
-@cache(days_in_minutes)
-@app.get(f"/{version}/{project}/linkedlist")
-def get_queue(response: Response) -> list[dict]:
-    """
-    Returns the linked list data.
-    :param response: Response
-    :return: list[dict]
-    """
-    with Database() as db:
-        linked_list = db.select_data(
-            os.getenv("LINKED_LIST")
-        )
-    return conversion(linked_list)
-
-
-# GET /v1/dsa/home
-@cache(days_in_minutes)
-@app.get(f"/{version}/{project}/home")
-def get_home(response: Response) -> list[dict]:
-    """
-    Returns Home Page content.
-    :param response: Response
-    :return: list[dict]
-    """
-    with Database() as db:
-        home = db.select_data(
-            os.getenv("HOME_PAGE")
+        info = db.select_data(
+            os.getenv("{}_INFO".format(target.upper()))
         )
 
-    def conversion(data: list[tuple]) -> list[dict]:
-        return [
-            {"title": item[1], "description": ast.literal_eval(item[2])}
-            for item in data
-        ]
-
-    return conversion(home)
+    return info_props_conversion(info)

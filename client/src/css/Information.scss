@@ -9,7 +9,7 @@
 }
 
 .information-header {
-  padding: 0.5rem;
+  padding: 0.5rem 1rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -24,10 +24,12 @@
 }
 
 .information-body {
-  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 
   p{
-    margin: 0.5rem 0;
+    padding: 0.5rem 1rem;
     font-size: 1.2rem;
     color: rgba(var(--white), 0.5);
   }

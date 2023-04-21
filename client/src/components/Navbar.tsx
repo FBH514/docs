@@ -21,6 +21,7 @@ function Navbar(): JSX.Element {
     }
 
     const items: NavbarItemProps[] = [
+        {title: "Node", link: "/node", img: undefined},
         {title: "Stack", link: "/stack", img: undefined},
         {title: "Queue", link: "/queue", img: undefined},
         {title: "Linked List", link: "/linkedlist", img: undefined}

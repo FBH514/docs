@@ -5,7 +5,7 @@ export interface InformationProps {
     description?: string[];
 }
 
-function Information(props: { data: InformationProps }): JSX.Element {
+function Information(props: { data: InformationProps | undefined }): JSX.Element {
 
     function Header(props: { title: string }): JSX.Element {
 
@@ -21,7 +21,7 @@ function Information(props: { data: InformationProps }): JSX.Element {
 
         return (
             <div className="information-header">
-                {props.title}
+                {props.title ?? "Loading"}
                 {/*<Button/>*/}
             </div>
         );
@@ -30,17 +30,17 @@ function Information(props: { data: InformationProps }): JSX.Element {
     function Body(props: { desc: string[] | undefined }): JSX.Element {
         return (
             <div className="information-body">
-                {props.desc && props.desc.map((item, index) => (
+                {props.desc ? props.desc.map((item, index) => (
                     <p key={index}>{item}</p>
-                ))}
+                )) : "Loading"}
             </div>
         );
     }
 
     return (
         <div className="information">
-            <Header title={props.data.title ?? "Loading"}/>
-            <Body desc={props.data.description && props.data.description}/>
+            <Header title={props.data?.title ?? "Loading"}/>
+            <Body desc={props.data?.description && props.data.description}/>
         </div>
     );
 }

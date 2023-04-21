@@ -70,14 +70,14 @@ function Functions(props: { arr: FunctionProps[] | undefined }): JSX.Element {
             return(
                 <div className={"dropdown-params"}>
                     {props.params && props.params?.map((item, index) => (
-                        <>
+                        <div key={index}>
                             <h3>Params</h3>
                             <div className={"dropdown-params-item"} key={index}>
                                 <p className={"param-item"}><span className={"prefix"}>name:</span> <span className={"value"}>{item.param}</span></p>
                                 <p className={"param-item-type"}><span className={"prefix"}>type:</span> <span className={"value"}>{item.type}</span></p>
                                 <p className={"param-item-optional"}><span className={"prefix"}>optional:</span> <span className={"value"}>{item.optional ? "True" : "False"}</span></p>
                             </div>
-                        </>
+                        </div>
                     ))}
                 </div>
             );
@@ -104,7 +104,7 @@ function Functions(props: { arr: FunctionProps[] | undefined }): JSX.Element {
     return (
         <div className="functions">
             {props.arr && props.arr.map((item, index) => (
-                <div className={"function-container"}>
+                <div className={"function-container"} key={index}>
                     <div className={"function"} key={index}>
                         <Header title={item.title ?? "Loading"} returns={item.returns ?? ""}/>
                         <Body overview={item.overview && item.overview}/>
