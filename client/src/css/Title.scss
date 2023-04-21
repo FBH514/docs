@@ -8,12 +8,20 @@
   color: rgba(var(--white), 0.3);
   margin-top: 5rem;
 
-  .title-h3 {
-    padding: 0.5rem;
-    border-radius: 5px;
-    color: #e8b923;
-    color: rgba(var(--white), 0.5);
+  .title-inner {
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    .title-h3 {
+      padding: 0.5rem;
+      border-radius: 5px;
+      color: #e8b923;
+      color: rgba(var(--white), 0.5);
+    }
   }
+
 
   .title-hr {
     width: 100%;

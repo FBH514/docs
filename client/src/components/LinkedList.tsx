@@ -27,7 +27,7 @@ function LinkedList(): JSX.Element {
     return(
         <div id="linkedlist">
             <Information data={info}/>
-            <Title title={"Linked List Functions"}/>
+            <Title data={{title: "Linked List Functions", language: null}}/>
             <Functions arr={data && data}/>
         </div>
     );

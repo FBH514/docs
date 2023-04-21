@@ -27,7 +27,7 @@ function Queue(): JSX.Element {
     return(
         <div id="queue">
             <Information data={info}/>
-            <Title title={"Queue Functions"}/>
+            <Title data={{title: "Queue Functions", language: null}}/>
             <Functions arr={data && data}/>
         </div>
     );

@@ -95,14 +95,20 @@
   padding: 0.5rem;
   border-radius: 5px;
 }
+.dropdown .dropdown-params .dropdown-params-item .prefix {
+  font-size: 0.8rem;
+}
+.dropdown .dropdown-params .dropdown-params-item .value {
+  font-weight: 700;
+}
 .dropdown .dropdown-params .dropdown-params-item .param-item {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .dropdown .dropdown-params .dropdown-params-item .param-item-type {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .dropdown .dropdown-params .dropdown-params-item .param-item-optional {
-  font-size: 1rem;
+  font-size: 1.2rem;
 }
 .dropdown .dropdown-description {
   display: grid;

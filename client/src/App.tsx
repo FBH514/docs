@@ -7,6 +7,7 @@ import Stack from "./components/Stack";
 import Queue from "./components/Queue";
 import LinkedList from "./components/LinkedList";
 import {QueryClient, QueryClientProvider} from "react-query";
+import {ReactQueryDevtools} from "react-query/devtools";
 
 const client = new QueryClient();
 
@@ -22,6 +23,7 @@ function App(): JSX.Element {
                     <Route path="/queue" element={<Queue/>}/>
                     <Route path="/linkedlist" element={<LinkedList/>}/>
                 </Routes>
+                <ReactQueryDevtools/>
             </QueryClientProvider>
         </div>
     )

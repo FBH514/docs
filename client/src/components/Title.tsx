@@ -1,14 +1,17 @@
 import '../css/Title.scss';
 
-function Title(props: {title: string}): JSX.Element {
+interface TitleProps {
+    title: string;
+}
 
-    const icon: string = "https://img.icons8.com/windows/32/2D728F/lambda.png";
-    // <img className={"title-img"} src={icon} alt={"lambda"}/>
+function Title(props: {data: TitleProps}): JSX.Element {
 
     return(
         <div className={"titles"}>
             <hr className={"title-hr"}/>
-            <h3 className={"title-h3"}>{props.title}</h3>
+            <div className="title-inner">
+                <h3 className={"title-h3"}>{props.data.title}</h3>
+            </div>
             <hr className={"title-hr"}/>
         </div>
     )

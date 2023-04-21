@@ -1,8 +1,8 @@
 import '../css/Information.scss';
 
 export interface InformationProps {
-    title: string | null;
-    description: string[] | null;
+    title?: string;
+    description?: string[];
 }
 
 function Information(props: { data: InformationProps }): JSX.Element {
@@ -22,12 +22,12 @@ function Information(props: { data: InformationProps }): JSX.Element {
         return (
             <div className="information-header">
                 {props.title}
-                <Button/>
+                {/*<Button/>*/}
             </div>
         );
     }
 
-    function Body(props: { desc: string[] | null }): JSX.Element {
+    function Body(props: { desc: string[] | undefined }): JSX.Element {
         return (
             <div className="information-body">
                 {props.desc && props.desc.map((item, index) => (
@@ -40,7 +40,7 @@ function Information(props: { data: InformationProps }): JSX.Element {
     return (
         <div className="information">
             <Header title={props.data.title ?? "Loading"}/>
-            <Body desc={props.data.description}/>
+            <Body desc={props.data.description && props.data.description}/>
         </div>
     );
 }

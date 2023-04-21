@@ -1,27 +1,23 @@
 import '../css/Home.scss';
 import Information, {InformationProps} from "./Information";
+import {useQuery} from "react-query";
+
+const HOME_ENDPOINT: string = "http://localhost:8000/v1/dsa/home";
+const HOME_QUERY_KEY: string = "home";
 
 function Home(): JSX.Element {
 
-    const welcome: InformationProps = {
-        title: "Welcome",
-        description: [
-            "This website has for objective of providing comprehensive documentation relevant to open source data structures in Python.",
-            "I am working hard to create an intuitive and user-friendly platform that will help you learn and leverage data structures with ease. It is currently in development and maintained by myself François, with plans for additional languages down the road."
-        ]
+    async function getHome(endpoint: string): Promise<InformationProps[]> {
+        return fetch(endpoint).then(response => response.json());
     }
 
-    const repos: InformationProps = {
-        title: "Download + Repos",
-        description: [
-            "Build versatile and stronger applications by downloading the package at PyPi. Find the source code for all data structures at https://github.com/fbh514."
-        ]
-    }
+    const {data} = useQuery<InformationProps[]>(HOME_QUERY_KEY, () => getHome(HOME_ENDPOINT))
+    const [welcome, about] = data || [];
 
-    return(
+    return (
         <div id="home">
-            <Information data={welcome}/>
-            <Information data={repos}/>
+            {welcome && <Information data={welcome}/>}
+            {about && <Information data={about}/>}
         </div>
     );
 }

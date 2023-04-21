@@ -100,16 +100,24 @@
       padding: 0.5rem;
       border-radius: 5px;
 
+      .prefix {
+        font-size: 0.8rem;
+      }
+
+      .value {
+        font-weight: 700;
+      }
+
       .param-item {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
 
       .param-item-type {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
 
       .param-item-optional {
-        font-size: 1rem;
+        font-size: 1.2rem;
       }
     }
   }

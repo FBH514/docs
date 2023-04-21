@@ -26,7 +26,7 @@ function Stack(): JSX.Element {
     return(
         <div id="stack">
             <Information data={info}/>
-            <Title title={"Stack Functions"}/>
+            <Title data={{title: "Stack Functions"}}/>
             <Functions arr={data && data}/>
         </div>
     );

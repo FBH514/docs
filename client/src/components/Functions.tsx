@@ -73,9 +73,9 @@ function Functions(props: { arr: FunctionProps[] | undefined }): JSX.Element {
                         <>
                             <h3>Params</h3>
                             <div className={"dropdown-params-item"} key={index}>
-                                <p className={"param-item"}>name: {item.param}</p>
-                                <p className={"param-item-type"}>type: {item.type}</p>
-                                <p className={"param-item-optional"}>optional: {item.optional ? "True" : "False"}</p>
+                                <p className={"param-item"}><span className={"prefix"}>name:</span> <span className={"value"}>{item.param}</span></p>
+                                <p className={"param-item-type"}><span className={"prefix"}>type:</span> <span className={"value"}>{item.type}</span></p>
+                                <p className={"param-item-optional"}><span className={"prefix"}>optional:</span> <span className={"value"}>{item.optional ? "True" : "False"}</span></p>
                             </div>
                         </>
                     ))}
